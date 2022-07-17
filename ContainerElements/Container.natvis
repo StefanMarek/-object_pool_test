@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+  <Type Name="CELL::OPOOL::TObjectPool&lt;*,*,*&gt;">
+    <!--<DisplayString>{{ size={mpLastElement - mpFirstElement} capacity={mpEndOfPool - mpFirstElement} values={mpFirstElement} }}</DisplayString>-->
+    <DisplayString>{{ size={mpLastElement - mpFirstElement} capacity={mpEndOfPool - mpFirstElement} }}</DisplayString>
+    <Expand>
+      <!--<Item Name="[size]" ExcludeView="simple">mpLastElement - mpFirstElement</Item>
+      <Item Name="[capacity]" ExcludeView="simple">mpEndOfPool - mpFirstElement</Item>-->
+      <ArrayItems>
+        <Size>mpLastElement - mpFirstElement</Size>
+        <ValuePointer>mpFirstElement</ValuePointer>
+      </ArrayItems>
+    </Expand>
+  </Type>
+  <Type Name="CELL::OPOOL::TObjectPoolPOD&lt;*,*,*&gt;">
+    <!--<DisplayString>{{ size={mpLastElement - mpFirstElement} capacity={mpEndOfPool - mpFirstElement} values={mpFirstElement} }}</DisplayString>-->
+    <DisplayString>{{ size={mpLastElement - mpFirstElement} capacity={mpEndOfPool - mpFirstElement} }}</DisplayString>
+    <Expand>
+      <!--<Item Name="[size]" ExcludeView="simple">mpLastElement - mpFirstElement</Item>
+      <Item Name="[capacity]" ExcludeView="simple">mpEndOfPool - mpFirstElement</Item>-->
+      <ArrayItems>
+        <Size>mpLastElement - mpFirstElement</Size>
+        <ValuePointer>mpFirstElement</ValuePointer>
+      </ArrayItems>
+    </Expand>
+  </Type>
+  <Type Name="CELL::SPOOL::TStringPool&lt;*,*,*&gt;">
+    <DisplayString>{mpFirstElement}</DisplayString>
+    <Expand>
+      <Item Name="[size]" ExcludeView="simple">mpLastElement - mpFirstElement</Item>
+      <Item Name="[capacity]" ExcludeView="simple">mpEndOfPool - mpFirstElement</Item>
+      <Item Name="[content]">mpFirstElement</Item>      
+      <!--<ArrayItems>
+        <Size>mpLastElement - mpFirstElement</Size>
+        <ValuePointer>mpFirstElement</ValuePointer>
+      </ArrayItems>-->
+    </Expand>
+  </Type>
+  <Type Name="CELL::BUFFER::TBuffer&lt;*,*&gt;">
+    <DisplayString>{{ size={mSize} values={mpData}}}</DisplayString>
+    <Expand>
+      <Item Name="[size]" ExcludeView="simple">mSize</Item>
+      <Item Name="[content]">mpData</Item>
+      <ArrayItems>
+        <Size>mSize</Size>
+        <ValuePointer>mpData</ValuePointer>
+      </ArrayItems>
+    </Expand>
+  </Type>
+  <Type Name="CELL::BUFFER::TMemoryBuffer&lt;*,*&gt;">
+    <DisplayString>{{ size={mSize} values={mpData}}}</DisplayString>
+    <Expand>
+      <Item Name="[size]" ExcludeView="simple">mSize</Item>
+      <Item Name="[content]">mpData</Item>
+      <ArrayItems>
+        <Size>mSize</Size>
+        <ValuePointer>mpData</ValuePointer>
+      </ArrayItems>
+    </Expand>
+  </Type>
+  <Type Name="CELL::SLIST::TSLList&lt;*,*,*&gt;">
+    <DisplayString>{{ size={mSize} attached={mAttached} }}</DisplayString>
+    <Expand>
+      <LinkedListItems>
+        <Size>mSize</Size>
+        <HeadPointer>mpFirst-&gt;mpNextSLN</HeadPointer>
+        <NextPointer>mpNextSLN</NextPointer>
+        <ValueNode>*((TNodeType*)this)</ValueNode>
+      </LinkedListItems>
+    </Expand>
+  </Type>
+</AutoVisualizer>

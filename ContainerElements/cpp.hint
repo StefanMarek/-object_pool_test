@@ -1,0 +1,18 @@
+// Hint files help the Visual Studio IDE interpret Visual C++ identifiers
+// such as names of functions and macros.
+// For more information see https://go.microsoft.com/fwlink/?linkid=865984
+#define CONSTEXPR constexpr
+#define NOOP __noop
+#define INLINE __inline
+#define FORCEINLINE __forceinline
+#define THISCALL __thiscall
+#define CLRCALL __clrcall
+#define CCALL __cdecl
+#define FASTCALL __fastcall
+#define STDCALL __stdcall
+#define NOINITVTABLE __declspec(novtable)
+#define PRAGMA_PACK_POP	pack(pop) 		
+#define PRAGMA_PACK_PUSH_CRT_PACKING pack(push, CELL_CRT_PACKING )
+#define POOL_USE_EXTENDED_METHODS
+#define USE_INITIALIZER_LIST
+#define THROW_NEVER noexcept

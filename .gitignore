@@ -1,0 +1,13 @@
+
+ContainerElements.vcxproj.user
+ContainerLibTests.vcxproj.user
+Makefile
+
+build/
+CMAKE/
+.vs/
+.vscode/
+Release-vc143-x64/
+bin/
+obj/
+lib/
